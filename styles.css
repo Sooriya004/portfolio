@@ -147,7 +147,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #1a1a1a, #2a2a2a, #333333, #404040);
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #2a2a2a, #333333);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
@@ -179,25 +179,33 @@ body {
 }
 
 .skill-block {
-    background: rgba(40, 40, 40, 0.9);
+    background: rgba(26, 26, 26, 0.95);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 155, 66, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .skill-block:hover {
     transform: translateY(-5px);
     border-color: var(--primary-color);
-    background: rgba(255, 155, 66, 0.1);
+    background: rgba(26, 26, 26, 0.98);
 }
 
 .skill-block h3 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.skill-block ul li {
+    color: var(--light-text);
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .skill-block ul {
