@@ -147,7 +147,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #000000, #1a1a1a, #2a2a2a, #333333);
+    background: linear-gradient(-45deg, rgba(26, 26, 26, 0.95), rgba(42, 42, 42, 0.95));
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }

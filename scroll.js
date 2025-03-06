@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const elementInView = (el, percentageScroll = 100) => {
         const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
         return (
-            elementTop <= 
-            ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+            elementTop <= ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100)) &&
+            elementBottom >= 0
         );
     };
 
@@ -15,17 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleScrollAnimation = () => {
         scrollElements.forEach((el) => {
-            if (elementInView(el, 100)) {
+            if (elementInView(el, 90)) {
                 displayScrollElement(el);
             }
-            // Removed the else clause to prevent hiding elements once they're revealed
         });
     };
 
+    // Add scroll event listener with throttling
+    let isScrolling = false;
     window.addEventListener('scroll', () => {
-        handleScrollAnimation();
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                handleScrollAnimation();
+                isScrolling = false;
+            });
+            isScrolling = true;
+        }
     });
 
     // Initial check for elements in view
-    handleScrollAnimation();
+    setTimeout(handleScrollAnimation, 100);
 }));
