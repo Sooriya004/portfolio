@@ -147,6 +147,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
 }
 
 .skills-grid {
@@ -159,13 +160,30 @@ body {
     padding: 2rem;
 }
 
+.about h2, .skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
 .skill-block {
-    background: rgba(26, 26, 26, 0.8);
+    background: rgba(40, 40, 40, 0.9);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 155, 66, 0.1);
+    border: 1px solid rgba(255, 155, 66, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .skill-block:hover {
@@ -186,7 +204,35 @@ body {
     margin: 0;
 }
 
-.skill-block li {
+.skill-card {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 155, 66, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    background: rgba(255, 155, 66, 0.1);
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card li {
     color: var(--light-text);
     margin: 0.8rem 0;
     font-size: 1.1rem;
