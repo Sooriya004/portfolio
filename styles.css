@@ -15,9 +15,10 @@
 }
 
 body {
-    background-color: var(--dark-bg);
+    background-color: #000000;
     color: var(--light-text);
     line-height: 1.6;
+    transition: background-color 0.3s ease;
 }
 
 .navbar {
@@ -28,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(26, 26, 26, 0.95);
+    background: rgba(40, 40, 40, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -63,7 +64,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: var(--dark-bg);
+    background: #000000;
     position: relative;
     background-image: url('nebula.jpg');
     background-attachment: fixed;
@@ -79,7 +80,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(-45deg, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+    background: linear-gradient(-45deg, rgba(128,128,128,0.1), rgba(64,64,64,0.1));
     opacity: 0.9;
     z-index: 0;
     animation: gradientBG 15s ease infinite;
@@ -139,15 +140,15 @@ body {
 }
 
 .about {
-    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(128,128,128,0.05), transparent);
 }
 
 .skills {
-    background: linear-gradient(135deg, rgba(255, 155, 66, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(128,128,128,0.05), transparent);
 }
 
 .contact {
-    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), transparent);
+    background: linear-gradient(135deg, rgba(128,128,128,0.05), transparent);
 }
 
 .section-title {
@@ -169,7 +170,7 @@ body {
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(128, 128, 128, 0.05);
     padding: 2rem;
     border-radius: 15px;
     position: relative;
@@ -233,7 +234,7 @@ body {
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(128, 128, 128, 0.05);
     padding: 2rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -246,8 +247,10 @@ body {
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
     margin-top: 2rem;
+    padding: 0 1rem;
 }
 
 .contact-item {
@@ -256,14 +259,16 @@ body {
     gap: 1rem;
     color: var(--light-text);
     text-decoration: none;
-    padding: 1rem;
-    border-radius: 8px;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(128, 128, 128, 0.1);
+    min-width: 200px;
+    justify-content: center;
 }
 
 .contact-item:hover {
-    background: rgba(255, 155, 66, 0.1);
+    background: rgba(128, 128, 128, 0.15);
     transform: translateY(-5px);
     color: var(--primary-color);
 }
@@ -275,7 +280,7 @@ body {
 footer {
     padding: 2rem;
     text-align: center;
-    background: var(--dark-bg);
+    background: #000000;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -302,7 +307,7 @@ footer {
     }
 
     .about-block {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(128, 128, 128, 0.05);
         padding: 2rem;
         border-radius: 15px;
         position: relative;
