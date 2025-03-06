@@ -65,6 +65,11 @@ body {
     overflow: hidden;
     background: var(--dark-bg);
     position: relative;
+    background-image: url('nebula.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero::before {
@@ -74,10 +79,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    opacity: 0.15;
+    background: linear-gradient(-45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+    opacity: 0.85;
     z-index: 0;
 }
 
@@ -288,10 +291,56 @@ footer {
     }
 
     .about-content {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    .contact-info {
-        flex-direction: column;
+    .about-block {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .about-block::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
+        opacity: 0.1;
+        z-index: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .about-block:hover {
+        transform: translateY(-5px);
+    }
+
+    .about-block:hover::before {
+        opacity: 0.2;
+    }
+
+    .about-block h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .about-block p {
+        position: relative;
+        z-index: 1;
+        color: var(--light-text);
+        line-height: 1.6;
     }
 }
