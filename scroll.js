@@ -13,17 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.add('scroll-reveal');
     };
 
-    const hideScrollElement = (element) => {
-        element.classList.remove('scroll-reveal');
-    };
-
     const handleScrollAnimation = () => {
         scrollElements.forEach((el) => {
             if (elementInView(el, 100)) {
                 displayScrollElement(el);
-            } else {
-                hideScrollElement(el);
             }
+            // Removed the else clause to prevent hiding elements once they're revealed
         });
     };
 
