@@ -175,7 +175,10 @@ class Game {
             this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
             this.ctx.fillStyle = '#fff';
             this.ctx.font = '30px Poppins';
-            this.ctx.fillText('Game Over! Click or press Space to restart', this.canvas.width/2 - 200, this.canvas.height/2);
+            const gameOverText = 'Game Over! Click or press Space to restart';
+            const textMetrics = this.ctx.measureText(gameOverText);
+            const textX = (this.canvas.width - textMetrics.width) / 2;
+            this.ctx.fillText(gameOverText, textX, this.canvas.height/2);
         }
     }
 
