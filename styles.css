@@ -63,9 +63,22 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(-45deg, var(--secondary-color), var(--primary-color));
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
+    opacity: 0.15;
+    z-index: 0;
 }
 
 @keyframes gradientBG {
@@ -82,9 +95,8 @@ body {
 .hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
@@ -148,6 +160,21 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skills-category {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.skills-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
 }
 
 .skill-card {
